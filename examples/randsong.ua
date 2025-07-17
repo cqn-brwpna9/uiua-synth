@@ -1,4 +1,4 @@
-SYNTH ~ "synth.ua"
+SYNTH ~ "../lib.ua"
   SYN   ← SYNTH~SYN
   REST  ← SYNTH~REST
 R     ← ⊡⌊×⚂:⟜(⧻)

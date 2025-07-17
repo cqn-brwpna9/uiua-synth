@@ -1,4 +1,4 @@
-S ~ "main.ua"
+S ~ "../lib.ua"
   SYN ← S~SYN
 BAG ← (
   SYN 0.5 2 SYN 0.5 0 SYN 1 ¯2

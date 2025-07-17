@@ -33,7 +33,7 @@ def convert(notes, times):
         if noteconv[notes[i]]=='REST':
             out.append(f'REST {times[i]}\n')
         out.append(f'SYN {times[i]} {noteconv[notes[i]]}\n')
-    return 'SYNTH~\"synth.ua\"\nSYN=SYNTH~SYN\nREST=SYNTH~REST\n'+''.join(out[::-1])+f'join__{len(notes)}'
+    return 'SYNTH~\"../lib.ua\"\nSYN=SYNTH~SYN\nREST=SYNTH~REST\n'+''.join(out[::-1])+f'join__{len(notes)}'
 def strtonotes(notes):
     out=[]
     for i in notes.split(' '):
