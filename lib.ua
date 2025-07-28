@@ -22,5 +22,5 @@ ENVELOPE ← (
   ⊙(⨬(×÷1|1|+1×⊃(¯÷:1-1◌)-)◡(+⊙:⊃(<⊙:)<))
   ⊙(◌◌◌)×
 ) # apply an envelope to a audio clip args: audio attack[0,d) decay[a,1) NOT QUITE RIGHT
-ENVELOPE (SQUARESYN 3 1) 0.1 0.8
+#ENVELOPE (SQUARESYN 3 1) 0.1 0.8
 
