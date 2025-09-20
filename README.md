@@ -1,6 +1,6 @@
 # uiua-synth
 `uiua-synth` is a library for the [Uiua](https://uiua.org) programing language that is used to synthisize audio.
-This library is currently in very early stages of development and some functions(`ENVELOPE`) do not work properly.
+This library is currently in very early stages of development.
 It can be imported using:
 ```uiua
 synth~"git: github.com/cqn-brwpna9/uiua-synth"
