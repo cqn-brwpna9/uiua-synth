@@ -5,7 +5,6 @@ It can be imported using:
 ```uiua
 synth~"git: github.com/cqn-brwpna9/uiua-synth"
 ```
-I would like help with the `ENVELOPE` function. The desiered behavor is [here](https://www.desmos.com/calculator/7affkwgfo2)
 ## functions
 |name|arguments|description|
 |---|---|---|
@@ -15,7 +14,7 @@ I would like help with the `ENVELOPE` function. The desiered behavor is [here](h
 |`SAWSYN`|`length` `note`|Very similar to `SYN` but uses a sawtooth wave|
 |`SQUARESYN`|`length` `note`|Very similar to `SYN` but uses a square wave|
 |`FIFTHWAVE`|`length` `note`|A synthisizer that is 2 sawtooth waves added together one 5 semitones higher than the other|
-|`ENVELOPE`|`audio` `attack` `decay`|Applies a envelope to `audio`. `attack` is how far into the function the audio reaches its full volume. `decay` is when the audio starts going to zero|
+|`ENVELOPE`|`audio` `attack` `decay`|Applies a envelope to `audio`. `attack` is how far into the function the audio reaches its full volume. `decay` is when the audio starts going to zero. A graph of it looks like this:  [graph](https://www.desmos.com/calculator/7affkwgfo2)|
 |`SYNBASE!`|`function` `length` `note`|A synthiszer base that doesnt include the identifying function for what type of sound it is. Use `∿×π` for a sine wave.|
 |`FREQSYNBASE!`|`function` `length` `note`|`SYNBASE` without passing to `TOFREQ` or adding a short rest on the end|
 |`FREQSYN`,`FREQSAWSYN` and `FREQSQUARESYN`|`length` `note`|Similar to `SYN`, `SAWSYN` and `SQUARESYN` but using `FREQSYNBASE!`.

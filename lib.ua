@@ -1,4 +1,6 @@
 TOFREQ ← ×440˜ⁿ2÷12 # 0=A=440 1=A#=466...
+#makes a rest
+# ? length
 REST ← (
   ÷⟜(⇡⁅×)&asr
   ⊞×1
@@ -18,12 +20,10 @@ FIFTHWAVE     ← (◌/+⊃(SAWSYN⊙(+ 5))(SAWSYN)) # plays a note and the note
 FREQSYN       ← (FREQSYNBASE!(∿×π))
 FREQSAWSYN    ← (FREQSYNBASE!(◿1))
 FREQSQUARESYN ← (FREQSYNBASE!(=⊃⌊∘÷2⌊))
-ENVFUNC ← (
-  ⨬(×÷1|1|+1×⊃(¯÷:1-1◌)-)◡(+⊙:⊃(<⊙:)<)
-)
+# a simple envelope
+# ? attackstop decaystart noteoroaudioclip
 ENVELOPE ← (
-  ◡(÷⟜(⇡)⧻)
-  ⊙(⨬(×÷1|1|+1×⊃(¯÷:1-1◌)-)◡(+⊙:⊃(<⊙:)<))
-  ⊙(◌◌◌)×
-) # apply an envelope to a audio clip args: audio attack[0,d) decay[a,1) NOT QUITE RIGHT
-# ENVELOPE (SQUARESYN 3 1) 0.1 0.8
+  ⊙⊙⊸(÷⟜⇡⧻)                  # make array from 0-1 of same size as audio array
+  ◡(+⊃(>⊙◌)(>◌))             # figure out which function to use
+  ×⨬(×⨪⊙◌|1⋅⋅◌|+1×⊙-⨪-1.⋅⊙∘) # make array of weights and multiply
+)
