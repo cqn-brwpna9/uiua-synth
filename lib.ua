@@ -1,3 +1,5 @@
+# Experimental!
+
 TOFREQ ← ×440˜ⁿ2÷12 # 0=A=440 1=A#=466...
 #makes a rest
 # ? length
