@@ -19,3 +19,6 @@ synth~"git: github.com/cqn-brwpna9/uiua-synth"
 |`FreqSynBase!`|`function` `length` `note`|`SynBase` without passing to `ToFreq` or adding a short rest on the end|
 |`FreqSyn`,`FreqSawSyn` and `FreqSquareSyn`|`length` `note`|Similar to `Syn`, `SawSyn` and `SquareSyn` but using `FreqSynBase!`.|
 |`Organ`|`length` `note`|Similar to a synthisizer, but plays an organ-like sound.|
+|`Overtones!!!`|(`synthisizer` `over/undertone offsets` `over/undertone relative volumes`) `length` `note`| gives the given synthisizer the given over/undertones and gives each tone a relative volume|
+|`Normalize`|`array`|Normalizes an array to a range of `[-1 1]`|
+|`ToNote`|`NoteString`|Converts a strinigified representation of a note to a note for `ToFreq`|

@@ -23,17 +23,17 @@ noteconv={
         'f#1':'9',
         'g1':'10',
         'g#1':'11',
-        'r':'REST'#ooh! a specal case
+        'r':'Rest'#ooh! a specal case
     }
 
 def convert(notes, times):
     assert len(notes)==len(times)
     out=[]
     for i in range(len(notes)):
-        if noteconv[notes[i]]=='REST':
-            out.append(f'REST {times[i]}\n')
-        out.append(f'SYN {times[i]} {noteconv[notes[i]]}\n')
-    return 'SYNTH~\"../lib.ua\"\nSYN=SYNTH~SYN\nREST=SYNTH~REST\n'+''.join(out[::-1])+f'join__{len(notes)}'
+        if noteconv[notes[i]]=='Rest':
+            out.append(f'Rest {times[i]}\n')
+        out.append(f'Syn {times[i]} {noteconv[notes[i]]}\n')
+    return 'Synth~\"../lib.ua\"\nSyn=Synth~Syn\nRest=Synth~Rest\n'+''.join(out[::-1])+f'join__{len(notes)}'
 def strtonotes(notes):
     out=[]
     for i in notes.split(' '):

@@ -1,5 +1,11 @@
 # Experimental!
+# a synthisizer library for uiua
 
+# converts a note from a stringified form to a note for ToFreq
+# note looks like "<a|b|c|d|e|f|g><b|n|s><octave number>"
+# ie "An4" or "Cs3"
+# not case sensitive
+ToNote ← +⊃(°¤+˜⊏0_2_3_5_7_8_10⊚="ABCDEFG"⌵⊙(-₁⊚="BNS"⌵)⊢₂|×₁₂-₄⋕⊣)
 ToFreq ← ×₄₄₀˜ⁿ2÷₁₂ # 0=A=440 1=A#=466...
 # makes a rest
 # ? length
@@ -9,9 +15,9 @@ Rest ← (
 )
 Normalize ← ˜÷⟜(⊢⍆) # resacales an array to be within [-1, 1]
 SynBase! ← (
-  ÷⟜(⇡⁅×)&asr  # make the list for sound
-  ToFreq ⊃⋅∘⊙◌ # convert notes to freqs
-  ⊞×           # apply freqs to lists
+  ÷⟜(⇡⁅×)&asr # make the list for sound
+  ⊙ToFreq     # convert note to freqs
+  ˜⊞×         # apply freqs to lists
   ^0
   ⊂Rest 0.01                            # add a short rest so different notes are audible
 )                                       # a base for all synthisizers
@@ -33,9 +39,15 @@ Envelope ← (
   ◡(+⊃(>⊙◌)(>◌))             # figure out which function to use
   ×⨬(×⨪⊙◌|1⋅⋅◌|+₁×⊙-⨪-₁.⋅⊙∘) # make array of weights and multiply
 )
+# apply over or undertones to a synthisizer at various volumens
+# ? (synth|over or undertones offsets|voulmes for each over/undertone) length note
+Overtones‼! ← (
+  ≡^0↯⧻^1⊙(+^1)
+  /+×^2
+  Normalize
+)
 # a synth organ
 Organ ← (
-  ⊃≡Syn≡TriSyn ↯6⊙(+[12 24 3 39 43 46])
-  /+⊂∩(÷[1 1 1 2 2 2])
-  Normalize
+  ⊃(Overtones‼!(TriSyn|[12 24 3 39 43 46]|[1 1 1 0.5 0.5 0.5])|Overtones‼!(Syn|[12 24 3 39 43 46]|[1 1 1 0.5 0.5 0.5]))
+  Normalize+
 )
