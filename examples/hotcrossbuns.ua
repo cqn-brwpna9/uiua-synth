@@ -6,14 +6,14 @@ BAG ← (
   ⊂₃
 )
 GGGG ← (
-  ⊂₄...Syn 0.25 ¯2
+  ⊂₄⟜⊸⟜∘Syn 0.25 ¯2
 )
 AAAA ← (
-  ⊂₄...Syn 0.25 0
+  ⊂₄⟜⊸⟜∘Syn 0.25 0
 )
 BAG
 AAAA
 GGGG
-.BAG
+∩BAG
 ⊂₅
 &ap

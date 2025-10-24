@@ -35,9 +35,9 @@ FreqTriSyn    ← FreqSynBase!(-₁×₂⌵-₁◿₁)
 # a simple envelope
 # ? attack stop, decay start, note or audioclip
 Envelope ← (
-  ⊙⊙⊸(÷⟜⇡⧻)                  # make array from 0-1 of same size as audio array
-  ◡(+⊃(>⊙◌)(>◌))             # figure out which function to use
-  ×⨬(×⨪⊙◌|1⋅⋅◌|+₁×⊙-⨪-₁.⋅⊙∘) # make array of weights and multiply
+  ⊙⊙⊸(÷⟜⇡⧻)                   # make array from 0-1 of same size as audio array
+  ◡(+⊃(>⊙◌)(>◌))              # figure out which function to use
+  ×⨬(×⨪⊙◌|1⋅⋅◌|+₁×⊙-⨪-₁⟜∘⋅⊙∘) # make array of weights and multiply
 )
 # apply over or undertones to a synthisizer at various volumens
 # ? (synth|over or undertones offsets|voulmes for each over/undertone) length note
